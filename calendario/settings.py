@@ -56,7 +56,7 @@ ROOT_URLCONF = 'calendario.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['/home/milton/django-python/gogole/calendario/calendario/templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
