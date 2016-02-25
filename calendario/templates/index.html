@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>
+      Pagina Principal
+    </title>
+  </head>
+  <body>
+  Este es el cuerpo principal de la pagina principal. La hora es {{ahora.hour}}:{{ahora.minute}}
+  <p></p>
+  <table>
+      <tr>
+          <th>Nombre </th>
+          <th>Primera Mesa </th>
+          <th>Segunda Mesa</th>
+          <th>Tercera Mesa</th>
+          <th>Cuarta Mesa</th>
+          <th>Quinta Mesa</th>
+          <th>Sexta Mesa</th>
+          <th>Septima Mesa</th>
+          <th>Octava Mesa</th>
+          <th>Novena Mesa</th>
+          <th>Decima Mesa</th>
+      </tr>
+{%for ale in aleatorio %}
+
+      {% for mar in materias%}
+      {%if ale == mar.id %}
+<tr>
+  <td>
+    {{mar.nombre}}
+  </td>
+<td>{{mar.primera_mesa}}</td>
+<td>{{mar.segunda_mesa}}</td>
+<td>{{mar.tercera_mesa}}</td>
+<td>{{mar.cuarta_mesa}}</td>
+<td>{{mar.quinta_mesa}}</td>
+<td>{{mar.sexta_mesa}}</td>
+<td>{{mar.septima_mesa}}</td>
+<td>{{mar.octava_mesa}}</td>
+<td>{{mar.novena_mesa}}</td>
+<td>{{mar.decima_mesa}}</td>
+</tr>
+{%endif%}
+  {%endfor%}
+  {%endfor%}
+
+    </table>
+<h1> El aleatorio es {{aleatorio}}</h1>
+
+  </body>
+</html>
