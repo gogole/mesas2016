@@ -12,7 +12,7 @@ def principal(request):
     materias = Materias.objects.all()
     aleatorio = []
     for i in range(1,5):
-        numeros = (random.randrange(5))
+        numeros = (random.randrange(10))
         if not numeros in aleatorio and numeros > 0:
             aleatorio.append(numeros)
     return render(request, "index.html", {'materias': materias, 'ahora':ahora, 'aleatorio':aleatorio})
