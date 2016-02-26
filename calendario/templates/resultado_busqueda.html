@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+
+    {{materias.nombre}}
+
+    </title>
+  </head>
+
+  <body>
+    <p> <h3>Estas buscando: <strong>{{ query }}</strong></h3></p>
+
+    {% if materias %}
+        <p>Materias encontradas: {{ materias|length }}.</p>
+        <ul>
+            {% for mat in materias %}
+                <a href="/{{mat.id}}"><li>{{ mat.nombre }} - {{mat.carrera}}</li></a>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Ningúna materia coincide con el criterio de búsqueda.</p>
+    {% endif %}
+
+
+  </body>
+</html>

@@ -16,3 +16,19 @@ def principal(request):
         if not numeros in aleatorio and numeros > 0:
             aleatorio.append(numeros)
     return render(request, "index.html", {'materias': materias, 'ahora':ahora, 'aleatorio':aleatorio})
+
+def buscar(request):
+    errors = []
+    if 'mat' in request.GET:
+        mat = request.GET['mat']
+        if not mat:
+            errors.append('Por favor introduce un termino de busqueda.')
+        else:
+            materias = Materias.objects.filter(nombre__icontains=mat)
+            return render(request, 'resultado_busqueda.html',{'materias': materias, 'query': mat})
+
+    return render(request, 'index.html', {'errors': errors})
+
+def mostrar_materias(request, pk):
+    mat = get_object_or_404(Materias, pk=pk)
+    return render(request, 'detalle_materia.html', {'materias': mat})

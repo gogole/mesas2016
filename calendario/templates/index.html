@@ -11,8 +11,26 @@
 
 {% block content%}
   <body>
-  Este es el cuerpo principal de la pagina principal. La hora es {{ahora.hour}}:{{ahora.minute}}
-  <p></p>
+  <h3>Este es el cuerpo principal de la pagina principal. La hora es {{ahora.hour}}:{{ahora.minute}}</h3>
+<div class = "buscar">
+    <h2>Buscar Materia:</h2>
+    <p>
+      {% if errors %}
+          <ul>
+              {% for error in errors %}
+                <li style="color: red;">{{ error }}</li>
+              {% endfor %}
+          </ul>
+      {% endif %}
+    <form action="/buscar/" method="get">
+        <input type="text" name="mat">
+        <input type="submit" value="Buscar">
+    </form>
+    </p>
+    
+  </div>
+
+<div class = "mostrar_azar">
   <table width="100%" border="2" align="center" cellspacing="0" bordercolor="#000000" bgcolor="#FFCC99">
       <tr>
           <th>Nombre </th>
@@ -51,6 +69,7 @@
   {%endfor%}
 
     </table>
+  </div>
 <h1> El aleatorio es {{aleatorio}}</h1>
 
   </body>
