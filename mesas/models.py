@@ -7,7 +7,6 @@ class Materias (models.Model):
     carrera = models.CharField(max_length = 50)
     cuatrimestre = models.CharField(max_length = 20)
     sitioweb = models.URLField()
-
     primera_mesa = models.DateField()
     segunda_mesa = models.DateField()
     tercera_mesa = models.DateField()
